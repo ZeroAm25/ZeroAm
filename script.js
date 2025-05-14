@@ -61,4 +61,19 @@ window.addEventListener('resize', () => {
         }
     }
 });
+
+// Mobile Hamburger Menu Toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+if (mobileMenu && navLinks) {
+  mobileMenu.addEventListener('click', function(e) {
+    navLinks.classList.toggle('show');
+  });
+  // Close menu when a nav link is clicked (for single page nav UX)
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      navLinks.classList.remove('show');
+    });
+  });
+}
   
